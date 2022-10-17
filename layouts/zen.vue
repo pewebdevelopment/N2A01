@@ -1,8 +1,10 @@
 <script setup>
-import { computed } from "vue";
+import { Vue, computed } from "vue";
 import { mdiForwardburger, mdiBackburger, mdiMenu } from "@mdi/js";
 
 // import { useRouter } from "vue-router";
+
+import VueRouter from 'vue-router';
 
 import menuAside from "@/configs/menuAside.js";
 
@@ -33,7 +35,9 @@ const styleStore = useStyleStore();
 
 const layoutStore = useLayoutStore();
 
-const router = useRouter();
+// const router = useRouter();
+
+router = Vue.use(VueRouter);
 
 router.beforeEach(() => {
   layoutStore.isAsideMobileExpanded = false;
@@ -61,7 +65,7 @@ const menuClick = (event, item) => {
       { 'ml-60 lg:ml-0': layoutStore.isAsideMobileExpanded },
     ]"
       class="pt-14 min-h-screen w-screen transition-position lg:w-auto bg-gray-50 dark:bg-slate-800 dark:text-slate-100">
-      <NavBar :menu="menuNavBar" :class="[
+      <!-- <NavBar :menu="menuNavBar" :class="[
         layoutAsidePadding,
         { 'ml-60 lg:ml-0': layoutStore.isAsideMobileExpanded },
       ]" @menu-click="menuClick">
@@ -79,15 +83,13 @@ const menuClick = (event, item) => {
           <FormControl placeholder="Search (ctrl+k)" ctrl-k-focus transparent borderless />
         </NavBarItemPlain>
       </NavBar>
-      <AsideMenu :menu="menuAside" @menu-click="menuClick" />
-      <slot />
+      <AsideMenu :menu="menuAside" @menu-click="menuClick" /> -->
 
-      <!-- Following was the old AsideMenu  
-         <AsideMenu :is-aside-mobile-expanded="isAsideMobileExpanded" :is-aside-lg-active="isAsideLgActive"
-          :menu="menuAside" @menu-click="menuClick" @aside-lg-close-click="isAsideLgActive = false" /> -->
-      <FooterBar>
+      <Nuxt/>
+
+      <!-- <FooterBar>
         <a href="#" target="_blank" class="text-blue-600"> Photon Ecademy</a>
-      </FooterBar>
+      </FooterBar> -->
 
     </div>
   </div>
