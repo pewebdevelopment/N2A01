@@ -1,5 +1,7 @@
 <script>
-import { h, defineComponent } from "vue";
+import { h } from "vue";
+import { defineComponent } from "vue-demi";
+// import { onMounted, onUnmounted, ref, defineComponent } from 'vue-demi'
 
 export default defineComponent({
   name: "BaseLevel",
@@ -37,4 +39,6 @@ export default defineComponent({
     );
   },
 });
+
+// export {default as BaseLevel}; 
 </script>

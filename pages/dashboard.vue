@@ -1,18 +1,26 @@
-<script>
+<script setup>
 // import { computed } from "vue";
 
 
 // import { computed, ref, onMounted } from "vue";
 
-// import {
-//   mdiAccountMultiple,
-//   mdiCartOutline,
-//   mdiChartTimelineVariant,
-//   mdiMonitorCellphone,
-//   mdiReload,
-//   mdiGithub,
-//   mdiChartPie,
-// } from "@mdi/js";
+import {
+  
+  mdiChartTimelineVariant,
+
+  
+  mdiGithub,
+
+  mdiAccountMultiple,
+  mdiCartOutline,
+  
+} from "@mdi/js";
+
+  // mdiAccountMultiple,
+  // mdiCartOutline,
+  // mdiMonitorCellphone,
+  // mdiReload,
+  // mdiChartPie,
 
 // import { useMainStore } from "@/store/main.js";
 
@@ -32,18 +40,20 @@
 // const transactionBarItems = computed(() => mainStore.history);
 
 
-export default {
+// export default {
   
-  setup() {
+//   setup() {
+
+//     return { }
+//   }
+// }
+
     
 // const mainStore = useMainStore();
 // const clientBarItems = computed(() => mainStore.clients.slice(0, 4));
 // const transactionBarItems = computed(() => mainStore.history);
 
 
-    return { }
-  }
-}
 
 
 </script>
@@ -56,9 +66,8 @@ export default {
     </div>
 
  <SectionMain>
-  <SectionBannerStarOnGitHub class="mt-6 mb-6" />
-<!--  
-      <SectionTitleLineWithButton
+
+  <SectionTitleLineWithButton
           :icon="mdiChartTimelineVariant"
           title="Overview"
           main
@@ -74,8 +83,9 @@ export default {
           />
 
         </SectionTitleLineWithButton>
+  <SectionBannerStarOnGitHub class="mt-6 mb-6" />
 
-        <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 mb-6">
+  <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 mb-6">
           <CardBoxWidget
             trend="12%"
             trend-type="up"
@@ -103,6 +113,11 @@ export default {
             label="Performance"
           />
         </div>
+
+<!--  
+      
+
+        
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
           <div class="flex flex-col justify-between">

@@ -1,47 +1,115 @@
 <script setup>
-import { computed, useSlots } from "vue";
+// import { computed, useSlots } from "vue";
+import { computed, useSlots } from '@nuxtjs/composition-api';
+import { defineEmits, defineProps } from 'vue-demi'
 import CardBoxComponentBody from "@/components/CardBoxComponentBody.vue";
 import CardBoxComponentFooter from "@/components/CardBoxComponentFooter.vue";
 
+
+
 const props = defineProps({
-  rounded: {
-    type: String,
-    default: "rounded-2xl",
-  },
-  flex: {
-    type: String,
-    default: "flex-col",
-  },
-  hasComponentLayout: Boolean,
-  hasTable: Boolean,
-  isForm: Boolean,
-  isHoverable: Boolean,
-  isModal: Boolean,
+rounded: {
+type: String,
+default: "rounded-2xl",
+},
+flex: {
+type: String,
+default: "flex-col",
+},
+hasComponentLayout: Boolean,
+hasTable: Boolean,
+isForm: Boolean,
+isHoverable: Boolean,
+isModal: Boolean,
 });
 
+
+
 const emit = defineEmits(["submit"]);
+
+const submit = (event) => {
+emit("submit", event);
+};
 
 const slots = useSlots();
 
 const hasFooterSlot = computed(() => slots.footer && !!slots.footer());
 
 const componentClass = computed(() => {
-  const base = [
-    props.rounded,
-    props.flex,
-    props.isModal ? "dark:bg-slate-900" : "dark:bg-slate-900/70",
-  ];
+const base = [
+props.rounded,
+props.flex,
+props.isModal ? "dark:bg-slate-900" : "dark:bg-slate-900/70",
+];
 
-  if (props.isHoverable) {
-    base.push("hover:shadow-lg transition-shadow duration-500");
-  }
+if (props.isHoverable) {
+base.push("hover:shadow-lg transition-shadow duration-500");
+}
 
-  return base;
+return base;
+
+
 });
 
-const submit = (event) => {
-  emit("submit", event);
-};
+
+
+  
+    
+
+
+
+
+
+
+
+  // name: "CardBox",
+  // props : {
+  // rounded: {
+  //   type: String,
+  //   default: "rounded-2xl",
+  // },
+  // flex: {
+  //   type: String,
+  //   default: "flex-col",
+  // },
+  // hasComponentLayout: Boolean,
+  // hasTable: Boolean,
+  // isForm: Boolean,
+  // isHoverable: Boolean,
+  // isModal: Boolean,
+
+
+
+// hasFooterSlot : computed(() => slots.footer && !!slots.footer()),
+
+// componentClass : computed(() => {
+//   const base = [
+//     props.rounded,
+//     props.flex,
+//     props.isModal ? "dark:bg-slate-900" : "dark:bg-slate-900/70",
+//   ];
+
+//   if (props.isHoverable) {
+//     base.push("hover:shadow-lg transition-shadow duration-500");
+//   }
+
+//   return base;
+// }),
+
+
+// slots : useSlots(),
+
+// emit : defineEmits(["submit"]),
+
+//  submit : (event) => {
+//   emit("submit", event);
+// },
+
+
+
+
+
+
 </script>
 
 <template>

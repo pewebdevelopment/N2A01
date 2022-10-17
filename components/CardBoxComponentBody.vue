@@ -1,4 +1,7 @@
 <script setup>
+
+import { defineProps } from 'vue-demi'
+
 defineProps({
   noPadding: Boolean,
 });
