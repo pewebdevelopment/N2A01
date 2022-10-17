@@ -1,4 +1,7 @@
-<script setup>
+<script>
+// import { computed } from "vue";
+
+
 // import { computed, ref, onMounted } from "vue";
 
 // import {
@@ -12,6 +15,7 @@
 // } from "@mdi/js";
 
 // import { useMainStore } from "@/store/main.js";
+
 // import * as chartConfig from "@/components/Charts/chart.config.js";
 // import LineChart from "@/components/Charts/LineChart.vue";
 
@@ -26,12 +30,27 @@
 // const mainStore = useMainStore();
 // const clientBarItems = computed(() => mainStore.clients.slice(0, 4));
 // const transactionBarItems = computed(() => mainStore.history);
-// </script>
+
+
+export default {
+  
+  setup() {
+    
+// const mainStore = useMainStore();
+// const clientBarItems = computed(() => mainStore.clients.slice(0, 4));
+// const transactionBarItems = computed(() => mainStore.history);
+
+
+    return { }
+  }
+}
+
+
+</script>
 
 <template>
   <div>
-    <!-- <NuxtLayout>
-    </NuxtLayout> -->
+   
     <div class ="bg-gray-800 text-white flex justify-center">
       This is the Dashboard
     </div>
