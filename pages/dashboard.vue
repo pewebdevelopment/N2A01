@@ -55,7 +55,9 @@ export default {
       This is the Dashboard
     </div>
 
-    <!-- <SectionMain>
+ <SectionMain>
+  <SectionBannerStarOnGitHub class="mt-6 mb-6" />
+<!--  
       <SectionTitleLineWithButton
           :icon="mdiChartTimelineVariant"
           title="Overview"
@@ -155,7 +157,10 @@ export default {
         <CardBox has-table>
           <TableSampleClients />
         </CardBox>
-      </SectionMain> -->
+ -->
+
+
+      </SectionMain>
     
   </div>
 </template>
