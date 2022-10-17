@@ -1,5 +1,5 @@
 <script setup>
-import { Vue, computed } from "vue";
+import { computed } from "vue";
 import { mdiForwardburger, mdiBackburger, mdiMenu } from "@mdi/js";
 
 // import { useRouter } from "vue-router";
@@ -65,7 +65,7 @@ const menuClick = (event, item) => {
       { 'ml-60 lg:ml-0': layoutStore.isAsideMobileExpanded },
     ]"
       class="pt-14 min-h-screen w-screen transition-position lg:w-auto bg-gray-50 dark:bg-slate-800 dark:text-slate-100">
-      <!-- <NavBar :menu="menuNavBar" :class="[
+      <NavBar :menu="menuNavBar" :class="[
         layoutAsidePadding,
         { 'ml-60 lg:ml-0': layoutStore.isAsideMobileExpanded },
       ]" @menu-click="menuClick">
@@ -83,13 +83,18 @@ const menuClick = (event, item) => {
           <FormControl placeholder="Search (ctrl+k)" ctrl-k-focus transparent borderless />
         </NavBarItemPlain>
       </NavBar>
-      <AsideMenu :menu="menuAside" @menu-click="menuClick" /> -->
+      
+      <!-- <AsideMenu :menu="menuAside" @menu-click="menuClick" />  -->
 
       <Nuxt/>
+      <!-- Use the Nuxt tag in Nuxt 2 Instead of the slot Tag -->
+
 
       <!-- <FooterBar>
         <a href="#" target="_blank" class="text-blue-600"> Photon Ecademy</a>
       </FooterBar> -->
+
+    
 
     </div>
   </div>

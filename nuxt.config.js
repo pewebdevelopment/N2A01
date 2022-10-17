@@ -18,7 +18,11 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  
+  // css: ['@/assets/css/main.css',], 
+  // currently failing to build with the above mentioned CSS  
+
+  css: ['@/assets/css/main.css',],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -39,6 +43,19 @@ export default {
 
     '@nuxt/typescript-build',
   ],
+  // Build Configuration: https://go.nuxtjs.dev/config-build
+  build: {
+    
+      postcss: {
+        postcssOptions: {
+          plugins: {
+            tailwindcss: {},
+            autoprefixer: {},
+          },
+        },
+      },
+    
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -57,6 +74,6 @@ export default {
     baseURL: '/',
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+
+  
 }
