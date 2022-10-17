@@ -33,13 +33,22 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     // https://go.nuxtjs.dev/composition-api
-    '@nuxtjs/composition-api/module'
+    '@nuxtjs/composition-api/module',
+    //https://go.nuxtjs.dev/pinia
+    '@pinia/nuxt',
+
+    '@nuxt/typescript-build',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+  ],
+
+  "types": [
+    // ...
+    "@pinia/nuxt"
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
