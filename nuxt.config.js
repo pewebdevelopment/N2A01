@@ -46,14 +46,15 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     
-      postcss: {
-        postcssOptions: {
-          plugins: {
-            tailwindcss: {},
-            autoprefixer: {},
-          },
-        },
-      },
+      // The following that was used in Nuxt3 isnt needed for tailwind to work as under the hood, the tailwind module is already working. Maybe we need to either use the following or use the '@nuxtjs/tailwindcss' module
+      // postcss: {
+      //   postcssOptions: {
+      //     plugins: {
+      //       tailwindcss: {},
+      //       autoprefixer: {},
+      //     },
+      //   },
+      // },
     
   },
 

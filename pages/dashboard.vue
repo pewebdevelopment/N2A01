@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref, onMounted } from "vue";
+// import { computed, ref, onMounted } from "vue";
 
 // import {
 //   mdiAccountMultiple,
@@ -32,7 +32,10 @@ import { computed, ref, onMounted } from "vue";
   <div>
     <!-- <NuxtLayout>
     </NuxtLayout> -->
-    This is the Dashboard
+    <div class ="bg-gray-800 text-white flex justify-center">
+      This is the Dashboard
+    </div>
+
     <!-- <SectionMain>
       <SectionTitleLineWithButton
           :icon="mdiChartTimelineVariant"
