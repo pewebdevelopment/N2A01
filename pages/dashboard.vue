@@ -11,8 +11,7 @@ import {
   
   mdiGithub,
 
-  mdiAccountMultiple,
-  mdiCartOutline,
+
   
 } from "@mdi/js";
 
