@@ -1,17 +1,12 @@
-<script>
-import { computed, defineComponent } from "vue-demi";
-
+<script setup>
+import { computed } from "vue";
 import { mdiTrendingDown, mdiTrendingUp, mdiTrendingNeutral } from "@mdi/js";
 import CardBox from "@/components/CardBox.vue";
 import BaseLevel from "@/components/BaseLevel.vue";
 import PillTag from "@/components/PillTag.vue";
 import UserAvatar from "@/components/UserAvatar.vue";
 
-
-export default defineComponent({
-
-  name: "CardBoxClient",
- props : {
+const props = defineProps({
   name: {
     type: String,
     required: true,
@@ -36,9 +31,9 @@ export default defineComponent({
     type: String,
     default: null,
   },
-},
+});
 
-pillType : computed(() => {
+const pillType = computed(() => {
   if (props.type) {
     return props.type;
   }
@@ -55,23 +50,21 @@ pillType : computed(() => {
   }
 
   return "info";
-}),
+});
 
-pillIcon : computed(() => {
+const pillIcon = computed(() => {
   return {
     success: mdiTrendingUp,
     warning: mdiTrendingNeutral,
     danger: mdiTrendingDown,
     info: null,
-  }[pillType.value];
-}),
-
-pillText : computed(() => props.text ?? `${props.progress}%`),
-
+  }
+  
+  [pillType.value];
+  
 });
 
-// export {default as CardBoxClient}; 
-
+const pillText = computed(() => props.text ?? `${props.progress}%`);
 </script>
 
 <template>
