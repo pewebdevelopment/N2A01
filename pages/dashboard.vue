@@ -72,7 +72,7 @@ import {
           main
         >
           <BaseButton
-            href="https://github.com/justboil/admin-one-vue-tailwind"
+            href=""
             target="_blank"
             :icon="mdiGithub"
             label="Star on GitHub"
@@ -84,7 +84,7 @@ import {
         </SectionTitleLineWithButton>
   <SectionBannerStarOnGitHub class="mt-6 mb-6" />
 
-  <!-- <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 mb-6">
+  <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 mb-6">
           <CardBoxWidget
             trend="12%"
             trend-type="up"
@@ -111,7 +111,7 @@ import {
             suffix="%"
             label="Performance"
           />
-        </div> -->
+        </div>
 
 <!--  
       

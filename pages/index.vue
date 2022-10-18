@@ -1,6 +1,6 @@
 <template>
  
-<div class = "flex justify-center bg-cyan-800 text-white">
+<div class = "flex justify-center bg-blue-800 text-white">
 Indev.vue file from the pages directory
 </div> 
 
