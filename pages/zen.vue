@@ -3,7 +3,6 @@ import { computed } from "vue";
 import { mdiForwardburger, mdiBackburger, mdiMenu } from "@mdi/js";
 
 // import { useRouter } from "vue-router";
-
 import VueRouter from 'vue-router';
 
 // import menuAside from "@/configs/menuAside.js";
@@ -13,12 +12,13 @@ import { useMainStore } from "@/store/main.js";
 import { useLayoutStore } from "@/store/layout.js";
 import { useStyleStore } from "@/store/style.js";
 
-// import BaseIcon from "@/components/BaseIcon.vue";
-// import FormControl from "@/components/FormControl.vue";
-// import NavBar from "@/components/NavBar.vue";
+import BaseIcon from "@/components/BaseIcon.vue";
+import FormControl from "@/components/FormControl.vue";
+import NavBar from "@/components/NavBar.vue";
+import NavBarItemPlain from "@/components/NavBarItemPlain.vue";
+
 // import AsideMenu from "@/components/prem/AsideMenu.vue";
-// import NavBarItemPlain from "@/components/NavBarItemPlain.vue";
-// import FooterBar from "@/components/FooterBar.vue";
+import FooterBar from "@/components/FooterBar.vue";
 
 useMainStore().setUser({
   name: "Zen Athang",
@@ -57,50 +57,51 @@ const menuClick = (event, item) => {
 <template>
   <div>
 
-  <div :class="{
-    dark: styleStore.darkMode,
-    'overflow-hidden lg:overflow-visible': layoutStore.isAsideMobileExpanded,
-  }">
+    <div :class="{
+      dark: styleStore.darkMode,
+      'overflow-hidden lg:overflow-visible': layoutStore.isAsideMobileExpanded,
+    }">
 
-    <div :class="[
-      layoutAsidePadding,
-      { 'ml-60 lg:ml-0': layoutStore.isAsideMobileExpanded },
-    ]"
-      class="pt-14 min-h-screen w-screen transition-position lg:w-auto bg-gray-50 dark:bg-slate-800 dark:text-slate-100">
-      
-      <NavBar :menu="menuNavBar" :class="[
+      <div :class="[
         layoutAsidePadding,
         { 'ml-60 lg:ml-0': layoutStore.isAsideMobileExpanded },
-      ]" @menu-click="menuClick">
-      
-        <NavBarItemPlain display="flex lg:hidden" @click.prevent="layoutStore.asideMobileToggle()">
-          <BaseIcon :path="
-            layoutStore.isAsideMobileExpanded
-              ? mdiBackburger
-              : mdiForwardburger
-          " size="24" />
-        </NavBarItemPlain>
-        <NavBarItemPlain display="hidden lg:flex xl:hidden" @click.prevent="layoutStore.asideLgToggle()">
-          <BaseIcon :path="layoutStore.isAsideLgActive ? mdiBackburger : mdiMenu" size="24" />
-        </NavBarItemPlain>
-        <NavBarItemPlain use-margin>
-          <FormControl placeholder="Search (ctrl+k)" ctrl-k-focus transparent borderless />
-        </NavBarItemPlain>
-      </NavBar>
-      
-      <!-- <AsideMenu :menu="menuAside" @menu-click="menuClick" />  -->
+      ]"
+        class="pt-14 min-h-screen w-screen transition-position lg:w-auto bg-gray-50 dark:bg-slate-800 dark:text-slate-100">
 
-      <Nuxt/>
-      <!-- Use the Nuxt tag in Nuxt 2 Instead of the slot Tag -->
+        <NavBar :menu="menuNavBar" :class="[
+          layoutAsidePadding,
+          { 'ml-60 lg:ml-0': layoutStore.isAsideMobileExpanded },
+        ]" @menu-click="menuClick">
+
+          <NavBarItemPlain display="flex lg:hidden" @click.prevent="layoutStore.asideMobileToggle()">
+            <BaseIcon :path="
+              layoutStore.isAsideMobileExpanded
+                ? mdiBackburger
+                : mdiForwardburger
+            " size="24" />
+          </NavBarItemPlain>
+          <NavBarItemPlain display="hidden lg:flex xl:hidden" @click.prevent="layoutStore.asideLgToggle()">
+            <BaseIcon :path="layoutStore.isAsideLgActive ? mdiBackburger : mdiMenu" size="24" />
+          </NavBarItemPlain>
+          <NavBarItemPlain use-margin>
+            <FormControl placeholder="Search (ctrl+k)" ctrl-k-focus transparent borderless />
+          </NavBarItemPlain>
+        </NavBar>
+
+        <!-- <AsideMenu :menu="menuAside" @menu-click="menuClick" />  -->
+
+        <!-- Use the Nuxt tag in Nuxt 2 Instead of the slot Tag -->
+        <Nuxt />
 
 
-      <!-- <FooterBar>
-        <a href="#" target="_blank" class="text-blue-600"> Photon Ecademy</a>
-      </FooterBar> -->
 
-    
+        <FooterBar>
+          <a href="#" target="_blank" class="text-blue-600"> Photon Ecademy</a>
+        </FooterBar>
 
+
+
+      </div>
     </div>
   </div>
-</div>
 </template> 
