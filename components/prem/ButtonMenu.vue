@@ -1,7 +1,7 @@
 <script setup>
 // import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 import { computed } from "vue";
-import { mdiChevronDown } from "@mdi/js";
+// import { mdiChevronDown } from "@mdi/js";
 // import BaseIcon from "@/components/BaseIcon.vue";
 // import BaseButton from "@/components/BaseButton.vue";
 
@@ -57,11 +57,11 @@ computed({
   },
 });
 
-const iconRightComputed = computed(() =>
-  props.label && !props.icon && !props.iconRight
-    ? mdiChevronDown
-    : props.iconRight
-);
+// const iconRightComputed = computed(() =>
+//   props.label && !props.icon && !props.iconRight
+//     ? mdiChevronDown
+//     : props.iconRight
+// );
 </script>
 
 <template>
