@@ -5,7 +5,7 @@ import { mdiForwardburger, mdiBackburger, mdiMenu } from "@mdi/js";
 // import { useRouter } from "vue-router";
 import VueRouter from 'vue-router';
 
-// import menuAside from "@/configs/menuAside.js";
+import menuAside from "@/configs/menuAside.js";
 
 import menuNavBar from "@/configs/menuNavBar.js";
 import { useMainStore } from "@/store/main.js";
@@ -88,12 +88,10 @@ const menuClick = (event, item) => {
           </NavBarItemPlain>
         </NavBar>
 
-        <!-- <AsideMenu :menu="menuAside" @menu-click="menuClick" />  -->
+        <AsideMenu :menu="menuAside" @menu-click="menuClick" /> 
 
         <!-- Use the Nuxt tag in Nuxt 2 Instead of the slot Tag -->
         <Nuxt />
-
-
 
         <FooterBar>
           <a href="#" target="_blank" class="text-blue-600"> Photon Ecademy</a>
