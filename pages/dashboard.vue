@@ -113,11 +113,6 @@ import {
           />
         </div>
 
-<!--  
-      
-
-        
-
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
           <div class="flex flex-col justify-between">
             <CardBoxTransaction
@@ -142,7 +137,7 @@ import {
             />
           </div>
         </div>
-        
+
         <SectionBannerStarOnGitHub class="mt-6 mb-6" />
 
         <SectionTitleLineWithButton :icon="mdiChartPie" title="Trends overview">
@@ -152,7 +147,7 @@ import {
             @click="fillChartData"
           />
         </SectionTitleLineWithButton>
-       
+
         <CardBox class="mb-6">
           <div v-if="chartData">
             <line-chart :data="chartData" class="h-96" />
@@ -171,7 +166,6 @@ import {
         <CardBox has-table>
           <TableSampleClients />
         </CardBox>
- -->
 
 
       </SectionMain>
