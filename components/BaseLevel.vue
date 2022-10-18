@@ -26,7 +26,7 @@ setup() {
 
     const parentBaseClass = ["block", "md:flex"];
 
-    // const childBaseClass = ["flex", "items-center", "justify-center"];
+    const childBaseClass = ["flex", "items-center", "justify-center"];
 
     return h(
       "div",
@@ -35,14 +35,14 @@ setup() {
           this.mobile ? parentMobileClass : parentBaseClass
         ),
       },
-      // this.$slots.default().map((element, index) => {
-      //   const childClass =
-      //     !this.mobile 
-      //       ? childBaseClass.concat(["mb-6", "md:mb-0"])
-      //       : childBaseClass;
+      ((element, index) => {
+        const childClass =
+          !this.mobile 
+            ? childBaseClass.concat(["mb-6", "md:mb-0"])
+            : childBaseClass;
 
-      //   return h("div", { class: childClass }, [element]);
-      // })
+        return h("div", { class: childClass }, [element]);
+      })
     );
   },
   // render() {
@@ -74,9 +74,3 @@ setup() {
 });
 </script>
 
-// <script setup>
-// import { useSlots } from 'vue'
-
-// const slots = useSlots()
-
-// </script>
