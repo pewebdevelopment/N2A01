@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import { mdiForwardburger, mdiBackburger, mdiMenu } from "@mdi/js";
 
 // import { useRouter } from "vue-router";
@@ -17,7 +17,7 @@ import FormControl from "@/components/FormControl.vue";
 import NavBar from "@/components/NavBar.vue";
 import NavBarItemPlain from "@/components/NavBarItemPlain.vue";
 
-// import AsideMenu from "@/components/prem/AsideMenu.vue";
+import AsideMenu from "@/components/prem/AsideMenu.vue";
 import FooterBar from "@/components/FooterBar.vue";
 
 useMainStore().setUser({

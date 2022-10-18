@@ -1,17 +1,17 @@
 <script setup>
-import { computed, ref } from "vue";
+import { computed, ref, onMounted } from "vue";
 // import { useRouter } from "vue-router";
 import  VueRouter  from "vue-router";
-import { useLayoutStore } from "@/store/layout.js";
 import {
   mdiClose,
   mdiChevronRightCircleOutline,
   mdiChevronLeftCircleOutline,
 } from "@mdi/js";
-// import BaseIcon from "@/components/BaseIcon.vue";
-// import OverlayLayer from "@/components/OverlayLayer.vue";
-// import AsideMenuLayer from "@/components/Premium/AsideMenuLayer.vue";
-// import AsideMenuItem from "@/components/Premium/AsideMenuItem.vue";
+import { useLayoutStore } from "@/store/layout.js";
+import BaseIcon from "@/components/BaseIcon.vue";
+import OverlayLayer from "@/components/OverlayLayer.vue";
+import PremAsideMenuLayer from "@/components/prem/AsideMenuLayer.vue";
+import PremAsideMenuItem from "@/components/prem/AsideMenuItem.vue";
 
 defineProps({
   menu: {
@@ -72,7 +72,9 @@ const overlayClick = () => {
   }
 };
 
-window.addEventListener("keydown", (e) => {
+
+onMounted(() => {
+  window.addEventListener("keydown", (e) => {
   if (
     e.key === "Escape" &&
     (secondaryMenuItem.value || !isPrimaryMenuCompact.value)
@@ -80,6 +82,11 @@ window.addEventListener("keydown", (e) => {
     overlayClick();
   }
 });
+
+});
+
+
+
 
 const router = new VueRouter;
 
