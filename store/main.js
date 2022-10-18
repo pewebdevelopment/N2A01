@@ -5,8 +5,8 @@ const state = () => ({
   // ...
 
   /* User */
-  userName: null,
-  userEmail: null,
+  userName: "Zenith Physics",
+  userEmail: "zen@physics.com",
   userAvatar: null,
 
   /* Field focus with ctrl+k (to register only once) */

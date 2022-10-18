@@ -1,24 +1,19 @@
 <script setup>
-import { computed, onMounted } from "vue";
+import { computed } from "vue";
 import { mdiForwardburger, mdiBackburger, mdiMenu } from "@mdi/js";
-
 // import { useRouter } from "vue-router";
 import VueRouter from 'vue-router';
-
 import menuAside from "@/configs/menuAside.js";
-
 import menuNavBar from "@/configs/menuNavBar.js";
 import { useMainStore } from "@/store/main.js";
 import { useLayoutStore } from "@/store/layout.js";
 import { useStyleStore } from "@/store/style.js";
-
 import BaseIcon from "@/components/BaseIcon.vue";
 import FormControl from "@/components/FormControl.vue";
 import NavBar from "@/components/NavBar.vue";
 import NavBarItemPlain from "@/components/NavBarItemPlain.vue";
-
-import AsideMenu from "@/components/prem/AsideMenu.vue";
 import FooterBar from "@/components/FooterBar.vue";
+import PremAsideMenu from "@/components/prem/AsideMenu.vue";
 
 useMainStore().setUser({
   name: "Zen Athang",
@@ -88,7 +83,7 @@ const menuClick = (event, item) => {
           </NavBarItemPlain>
         </NavBar>
 
-        <AsideMenu :menu="menuAside" @menu-click="menuClick" /> 
+        <PremAsideMenu :menu="menuAside" @menu-click="menuClick" /> 
 
         <!-- Use the Nuxt tag in Nuxt 2 Instead of the slot Tag -->
         <Nuxt />

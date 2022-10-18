@@ -4,7 +4,8 @@ import { computed } from "vue";
 const props = defineProps({
   username: {
     type: String,
-    required: true,
+    required: false,
+    default: "Zenith",
   },
   avatar: {
     type: String,
