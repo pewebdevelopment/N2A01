@@ -67,7 +67,7 @@ const menuClick = (event, item) => {
           layoutAsidePadding,
           { 'ml-60 lg:ml-0': layoutStore.isAsideMobileExpanded },
         ]" @menu-click="menuClick">
-
+        
           <NavBarItemPlain display="flex lg:hidden" @click.prevent="layoutStore.asideMobileToggle()">
             <BaseIcon :path="
               layoutStore.isAsideMobileExpanded
