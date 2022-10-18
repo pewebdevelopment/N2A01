@@ -2,12 +2,16 @@
 // import { computed } from "vue";
 
 
-// import { computed, ref, onMounted } from "vue";
+import { computed, ref, onMounted } from "vue";
 
 import {
   
   mdiChartTimelineVariant,
-
+  mdiAccountMultiple,
+  mdiCartOutline,
+  mdiMonitorCellphone,
+  mdiReload,
+  mdiChartPie,
   
   mdiGithub,
 
@@ -21,22 +25,22 @@ import {
   // mdiReload,
   // mdiChartPie,
 
-// import { useMainStore } from "@/store/main.js";
+import { useMainStore } from "@/store/main.js";
 
-// import * as chartConfig from "@/components/Charts/chart.config.js";
-// import LineChart from "@/components/Charts/LineChart.vue";
+import * as chartConfig from "@/components/Charts/chart.config.js";
+import LineChart from "@/components/Charts/LineChart.vue";
 
-// const chartData = ref(null);
+const chartData = ref(null);
 
-// const fillChartData = () => {
-//   chartData.value = chartConfig.sampleChartData();
-// };
-// onMounted(() => {
-//   fillChartData();
-// });
-// const mainStore = useMainStore();
-// const clientBarItems = computed(() => mainStore.clients.slice(0, 4));
-// const transactionBarItems = computed(() => mainStore.history);
+const fillChartData = () => {
+  chartData.value = chartConfig.sampleChartData();
+};
+onMounted(() => {
+  fillChartData();
+});
+const mainStore = useMainStore();
+const clientBarItems = computed(() => mainStore.clients.slice(0, 4));
+const transactionBarItems = computed(() => mainStore.history);
 
 
 // export default {
