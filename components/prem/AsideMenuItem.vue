@@ -1,12 +1,12 @@
 <script setup>
 import { ref, computed, watch } from "vue";
 import { RouterLink } from "vue-router";
-import { useStyleStore } from "@/store/style.js";
 import { mdiMinus, mdiPlus, mdiChevronRight } from "@mdi/js";
+import { useStyleStore } from "@/store/style.js";
 import { getButtonColor } from "@/configs/colors.js";
 import BaseIcon from "@/components/BaseIcon.vue";
-import AsideMenuList from "@/components/Premium/AsideMenuList.vue";
-import UpdateMark from "@/components/Premium/UpdateMark.vue";
+import PremAsideMenuList from "@/components/prem/AsideMenuList.vue";
+import PremUpdateMark from "@/components/prem/UpdateMark.vue";
 
 const props = defineProps({
   item: {

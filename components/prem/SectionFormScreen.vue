@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from "vue";
-import { useRoute, RouterLink } from "vue-router";
+// import VueRouter, { RouterLink } from "vue-router";
+import { RouterLink } from "vue-router";
 import { useStyleStore } from "@/store/style.js";
 import {
   gradientBgPurplePink,
@@ -41,16 +42,16 @@ const colorClass = computed(() => {
   return "";
 });
 
-const route = useRoute();
+// const route = new VueRouter;
 
-const currentRouteName = route.name;
+// const currentRouteName = route.name;
 
-const routes = {
-  login: "Login",
-  signup: "Signup",
-  remind: "Remind",
-  error: "Error",
-};
+// const routes = {
+//   login: "Login",
+//   signup: "Signup",
+//   remind: "Remind",
+//   error: "Error",
+// };
 </script>
 
 <template>

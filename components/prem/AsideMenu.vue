@@ -97,6 +97,7 @@ const expandCollapseItem = computed(() => ({
 </script>
 
 <template>
+  <div>
   <PremAsideMenuLayer
     :menu="menu"
     :class="[
@@ -153,4 +154,5 @@ const expandCollapseItem = computed(() => ({
     z-index="z-40"
     @overlay-click="overlayClick"
   />
+</div>
 </template>

@@ -33,6 +33,7 @@ defineProps({
 </script>
 
 <template>
+  <div>
   <div class="mb-3">
     <PillTagTrend v-if="trend" :trend="trend" :trend-type="trendType" small />
   </div>
@@ -48,4 +49,5 @@ defineProps({
     <IconRounded v-if="icon" :icon="icon" :color="iconType" bg />
   </div>
   <BaseDivider v-if="divider" />
+</div>
 </template>
