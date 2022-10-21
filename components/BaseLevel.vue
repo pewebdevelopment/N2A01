@@ -12,19 +12,6 @@ export default defineComponent({
     },
   },
 
-  // const props = defineProps({
-
-  //   mobile: {
-  //     type: Boolean,
-
-  //   },
-  //   type: {
-  //     type: String,
-  //     default: "justify-between",
-  //   },
-
-  // });
-
   setup(props) {
     const slots = useSlots();
     // slots = slots.default ? slots.default() : [];
