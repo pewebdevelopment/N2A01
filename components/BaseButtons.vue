@@ -21,7 +21,7 @@ export default defineComponent({
   },
 
   setup(props, { slots }) {
-
+    // we dont have access to the this keyword inside the setup function
     // const slots = useSlots();
 
     const hasSlot = slots && slots.default;
