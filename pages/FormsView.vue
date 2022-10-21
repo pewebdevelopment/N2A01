@@ -91,7 +91,8 @@ const formStatusSubmit = () => {
             <BaseButton type="submit" color="info" label="Submit" />
             <BaseButton type="reset" color="info" outline label="Reset" />
             <BaseButtons>
-
+              <BaseButton type="submit" color="info" label="Submit" />
+              <BaseButton type="reset" color="info" outline label="Reset" />
             </BaseButtons>
           </template>
         </CardBox>

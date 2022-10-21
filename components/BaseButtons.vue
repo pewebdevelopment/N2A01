@@ -1,5 +1,6 @@
 <script>
-import { h, defineComponent, useSlots } from "vue";
+// import { h, defineComponent, useSlots } from "vue";
+import { h, defineComponent } from "vue";
 
 export default defineComponent({
   name: "BaseButtons",
@@ -19,9 +20,9 @@ export default defineComponent({
     },
   },
 
-  setup(props) {
+  setup(props, { slots }) {
 
-    const slots = useSlots();
+    // const slots = useSlots();
 
     const hasSlot = slots && slots.default;
 
