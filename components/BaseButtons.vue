@@ -1,5 +1,5 @@
 <script>
-import { h, defineComponent } from "vue";
+import { h, defineComponent, useSlots } from "vue";
 
 export default defineComponent({
   name: "BaseButtons",
@@ -18,43 +18,48 @@ export default defineComponent({
       default: "-mb-3",
     },
   },
-  render() {
-    const hasSlot = this.$slots && this.$slots.default;
+
+  setup(props) {
+
+    const slots = useSlots();
+
+    const hasSlot = slots && slots.default;
 
     const parentClass = [
       "flex",
       "items-center",
-      this.type,
-      this.noWrap ? "flex-nowrap" : "flex-wrap",
+      props.type,
+      props.noWrap ? "flex-nowrap" : "flex-wrap",
     ];
 
-    if (this.mb) {
-      parentClass.push(this.mb);
+    if (props.mb) {
+      parentClass.push(props.mb);
     }
-
-    return h(
+    return () => h(
       "div",
       { class: parentClass },
       hasSlot
         ? ((element) => {
-            if (
-              element &&
-              element.children &&
-              typeof element.children === "object"
-            ) {
-              return h(
-                element,
-                {},
-                element.children.map((child) => {
-                  return h(child, { class: [this.classAddon] });
-                })
-              );
-            }
+          if (
+            element &&
+            element.children &&
+            typeof element.children === "object"
+          ) {
+            return h(
+              element,
+              {},
+              element.children.map((child) => {
+                return h(child, { class: [props.classAddon] });
+              })
+            );
+          }
 
-            return h(element, { class: [this.classAddon] });
-          })
+          return h(element, { class: [props.classAddon] });
+        })
         : null
     );
-  },
+
+  }
+
 });
 </script>
