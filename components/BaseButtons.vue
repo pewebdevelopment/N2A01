@@ -10,7 +10,9 @@
 </template>
 
 <script>
+
 import { defineComponent } from 'vue'
+
 
 export default defineComponent({
   name: 'BaseButtons',
@@ -25,5 +27,7 @@ export default defineComponent({
       default: '-mb-3',
     },
   },
+
 })
+
 </script>
