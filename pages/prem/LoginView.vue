@@ -2,6 +2,11 @@
 <script setup>
 import { reactive, ref, computed } from "vue";
 
+import {
+  mdiAccount,
+  mdiHome
+} from "@mdi/js";
+
 const form = reactive({
   login: "johndoe",
   pass: "secret",
@@ -37,75 +42,41 @@ const passShowHideClicked = ref(true);
     <NuxtLayout>
       <PremSectionFormScreen v-slot="{ cardClass }" bg="purplePink" has-promo>
 
-      <CardBox
-        :class="[cardClass, cardClassAddon]"
-        is-form
-        @submit.prevent="submit"
-      >
-        <FormField
-          label="Login"
-          :error="hasError"
-          help="Please enter your login"
-        >
-          <FormControl
-            v-model="form.login"
-            :error="hasError"
-            :icon-right="mdiAccount"
-            name="login"
-            placeholder="user@example.com"
-            autocomplete="username"
-          />
-        </FormField>
+        <CardBox :class="[cardClass, cardClassAddon]" is-form @submit.prevent="submit">
+          <FormField label="Login" :error="hasError" help="Please enter your login">
+            <FormControl v-model="form.login" :error="hasError" :icon-right="mdiAccount" name="login"
+              placeholder="user@example.com" autocomplete="username" />
+          </FormField>
 
-        <FormField
-          label="Password"
-          :error="hasError"
-          help="Click icon to show/hide"
-        >
-          <FormControl
-            v-model="form.pass"
-            :error="hasError"
-            :tip-right="passShowHideClicked ? null : 'Click to show/hide'"
-            type="password"
-            name="password"
-            placeholder="Password"
-            autocomplete="current-password"
-            @right-icon-click="passShowHideClicked = true"
-          />
-        </FormField>
+          <FormField label="Password" :error="hasError" help="Click icon to show/hide">
+            <FormControl v-model="form.pass" :error="hasError"
+              :tip-right="passShowHideClicked ? null : 'Click to show/hide'" type="password" name="password"
+              placeholder="Password" autocomplete="current-password" @right-icon-click="passShowHideClicked = true" />
+          </FormField>
 
-        <BaseLevel mobile>
-          <FormCheckRadioPicker
-            v-model="form.remember"
-            name="remember"
-            :options="{ remember: 'Remember' }"
-            spaced
-          />
-          <RouterLink to="/remind" class="text-sm">
-            Forgot password?
-          </RouterLink>
-        </BaseLevel>
-
-        <template #footer>
           <BaseLevel mobile>
-            <BaseButtons>
-              <BaseButton
-                label="Login"
-                type="submit"
-                color="info"
-                :tip="hasTip ? 'Click to see error state' : null"
-              />
-              <BaseButton label="Sign up" to="/signup" color="info" outline />
-            </BaseButtons>
-            <PremButtonTextLink to="/" :icon="mdiHome" label="Home" small />
+            <FormCheckRadioPicker v-model="form.remember" name="remember" :options="{ remember: 'Remember' }" spaced />
+            <RouterLink to="/remind" class="text-sm">
+              Forgot password?
+            </RouterLink>
           </BaseLevel>
-        </template>
-      </CardBox>
 
-    </PremSectionFormScreen>
+          <template #footer>
+            <BaseLevel mobile>
+              <BaseButtons>
+                <BaseButton label="Login" type="submit" color="info"
+                  :tip="hasTip ? 'Click to see error state' : null" />
+                <BaseButton label="Sign up" to="/signup" color="info" outline />
+              </BaseButtons>
+              <PremButtonTextLink to="/" :icon="mdiHome" label="Home" small />
+            </BaseLevel>
+          </template>
+        </CardBox>
+
+      </PremSectionFormScreen>
     </NuxtLayout>
 
-  
+
   </div>
 </template>
 

@@ -1,6 +1,8 @@
 
 <script>
-import { h, defineComponent, useSlots } from "vue";
+import { h, defineComponent, } from 'vue'
+// import { h, defineComponent, useSlots } from 'vue'
+
 export default defineComponent({
   name: "BaseButtons",
   props: {
@@ -22,8 +24,8 @@ export default defineComponent({
 
   setup(props) {
 
-    const slots = useSlots();
-    const hasSlot = slots;
+    // const Myslots = useSlots();
+    // const hasSlot = true;
 
     const parentClass = [
       "flex",
@@ -38,24 +40,7 @@ export default defineComponent({
     return () => h(
       "div",
       { class: parentClass },
-      hasSlot
-        ? slots.default().map((element) => {
-          if (
-            element &&
-            element.children &&
-            typeof element.children === "object"
-          ) {
-            return h(
-              element,
-              {},
-              element.children.map((child) => {
-                return h(child, { class: [props.classAddon] });
-              })
-            );
-          }
-          return h(element, { class: [props.classAddon] });
-        })
-        : null
+      null
     );
 
 
@@ -65,23 +50,26 @@ export default defineComponent({
 });
 </script>
 
-// import { defineComponent } from 'vue'
 
-
-// export default defineComponent({
-//   name: 'BaseButtons',
-//   props: {
-//     noWrap: Boolean,
-//     type: {
-//       type: String,
-//       default: 'justify-start',
-//     },
-//     mb: {
-//       type: String,
-//       default: '-mb-3',
-//     },
-//   },
-
-// })
-
-// </script>
+    // return () => h(
+    //   "div",
+    //   { class: parentClass },
+    //   hasSlot
+    //     ? Myslots.default().map((element) => {
+    //       if (
+    //         element &&
+    //         element.children &&
+    //         typeof element.children === "object"
+    //       ) {
+    //         return h(
+    //           element,
+    //           {},
+    //           element.children.map((child) => {
+    //             return h(child, { class: [props.classAddon] });
+    //           })
+    //         );
+    //       }
+    //       return h(element, { class: [props.classAddon] });
+    //     })
+    //     : null
+    // );
