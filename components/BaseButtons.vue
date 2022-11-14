@@ -35,7 +35,7 @@ export default defineComponent({
       parentClass.push(props.mb);
     }
 
-    return h(
+    return () => h(
       "div",
       { class: parentClass },
       hasSlot
