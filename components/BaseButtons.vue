@@ -3,9 +3,9 @@
     class="flex items-center gap-3"
     :class="[type, mb, noWrap ? '' : 'flex-wrap']"
   >
-    <template>
+    
       <slot name="buttons" />
-    </template>
+    
   </div>
 </template>
 
