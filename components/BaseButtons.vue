@@ -1,66 +1,33 @@
+<template>
+  <div
+    class="flex items-center gap-3"
+    :class="[type, mb, noWrap ? '' : 'flex-wrap']"
+  >
+    <template>
+      <slot name="buttons" />
+    </template>
+  </div>
+</template>
+
 <script>
-// import { h, defineComponent, useSlots } from "vue";
-import { h, defineComponent } from "vue";
+
+import { defineComponent } from 'vue'
+
 
 export default defineComponent({
-  name: "BaseButtons",
+  name: 'BaseButtons',
   props: {
     noWrap: Boolean,
     type: {
       type: String,
-      default: "justify-start",
-    },
-    classAddon: {
-      type: String,
-      default: "mr-3 last:mr-0 mb-3",
+      default: 'justify-start',
     },
     mb: {
       type: String,
-      default: "-mb-3",
+      default: '-mb-3',
     },
   },
 
-  setup(props, { slots }) {
-    // we dont have access to the this keyword inside the setup function
-    // const slots = useSlots();
+})
 
-    const hasSlot = slots && slots.default;
-
-    const parentClass = [
-      "flex",
-      "items-center",
-      props.type,
-      props.noWrap ? "flex-nowrap" : "flex-wrap",
-    ];
-
-    if (props.mb) {
-      parentClass.push(props.mb);
-    }
-    return () => h(
-      "div",
-      { class: parentClass },
-      hasSlot
-        ? ((element) => {
-          if (
-            element &&
-            element.children &&
-            typeof element.children === "object"
-          ) {
-            return h(
-              element,
-              {},
-              element.children.map((child) => {
-                return h(child, { class: [props.classAddon] });
-              })
-            );
-          }
-
-          return h(element, { class: [props.classAddon] });
-        })
-        : null
-    );
-
-  }
-
-});
 </script>
