@@ -1,7 +1,9 @@
+<!-- eslint-disable vue/no-lone-template -->
 <script setup>
 import { computed } from 'vue'
 import { mdiForwardburger, mdiBackburger, mdiMenu } from '@mdi/js'
 // import { useRouter } from "vue-router";
+
 import menuAside from '@/configs/menuAside.js'
 import menuNavBar from '@/configs/menuNavBar.js'
 import { useMainStore } from '@/store/main.js'
@@ -10,28 +12,46 @@ import { useStyleStore } from '@/store/style.js'
 import BaseIcon from '@/components/BaseIcon.vue'
 import FormControl from '@/components/FormControl.vue'
 import NavBar from '@/components/NavBar.vue'
-import AsideMenu from '@/components/prem/AsideMenu.vue'
 import NavBarItemPlain from '@/components/NavBarItemPlain.vue'
 import FooterBar from '@/components/FooterBar.vue'
+// import PremAsideMenu from '@/components/prem/AsideMenu.vue'
+
 useMainStore().setUser({
-  name: 'Zenith Athang',
-  email: 'zenith@example.com',
+  name: 'Zen Athang',
+  email: 'john@example.com',
   avatar:
     'https://avatars.dicebear.com/api/avataaars/example.svg?options[top][]=shortHair&options[accessoriesChance]=93',
 })
+
 const layoutAsidePadding = computed(() =>
   layoutStore.isAsideLgActive ? 'lg:pl-20' : 'xl:pl-20'
 )
+
 const styleStore = useStyleStore()
+
 const layoutStore = useLayoutStore()
-// const router = this.$router
-// router.beforeEach(() => {
-//   layoutStore.isAsideMobileExpanded = false
-// })
+
+// const router = useRouter();
+
+const router = this.$nuxt._router // This is not working
+
+// this.$nuxt.$route.name // returns 'about-us'
+// this.$nuxt.$route.path // returns '/about-us'
+
+// You can also access the route and router object from the global $nuxt object this way
+
+//  this.$nuxt._route
+//  this.$nuxt._router
+
+router.beforeEach(() => {
+  layoutStore.isAsideMobileExpanded = false
+})
+
 const menuClick = (event, item) => {
   if (item.isToggleLightDark) {
     styleStore.setDarkMode()
   }
+
   if (item.isLogout) {
     //
   }
@@ -101,16 +121,20 @@ const menuClick = (event, item) => {
             />
           </NavBarItemPlain>
         </NavBar>
-        <AsideMenu :menu="menuAside" @menu-click="menuClick" />
-        <slot />
 
-        <!-- Following was the old AsideMenu  
-         <AsideMenu :is-aside-mobile-expanded="isAsideMobileExpanded" :is-aside-lg-active="isAsideLgActive"
-          :menu="menuAside" @menu-click="menuClick" @aside-lg-close-click="isAsideLgActive = false" /> -->
+        <AsideMenu :menu="menuAside" @menu-click="menuClick" />
+
+        <!-- Use the Nuxt tag in Nuxt 2 Instead of the slot Tag -->
+        // eslint-disable-next-line vue/no-lone-template
+
+        <div>
+          <Nuxt />
+        </div>
+
         <FooterBar>
-          <a href="#" target="_blank" class="text-blue-600"> Photon Ecademy</a>
+          <a href="#" target="_blank" class="text-blue-800"> Photon Ecademy </a>
         </FooterBar>
       </div>
     </div>
   </div>
-</template> 
+</template>
