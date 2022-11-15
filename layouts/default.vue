@@ -4,7 +4,7 @@ const styleStore = useStyleStore()
 </script>
 
 <template>
-  <div :class="{ dark: styleStore.darkMode }">
+  <div :class="{ dark: styleStore.darkMode }"></div>
     <div
       class="
         bg-slate-800
@@ -14,7 +14,7 @@ const styleStore = useStyleStore()
         dark:bg-slate-800 dark:text-slate-100
       "
     >
-      This is the default layout
+      This is the Default layout
       <div>
         <Nuxt />
       </div>
